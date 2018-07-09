@@ -14,7 +14,7 @@ class NewIngredient extends Component {
   render() {
     return (
       <div>
-        <h1>New Ingredient</h1>
+        <h4>New Ingredient</h4>
         <form onSubmit={this.handleNewIngredient}>
           <input ref={this.ingredientInput} name="ingredientName" type="text" />
           <button type="submit">Add</button>

@@ -4,7 +4,7 @@ const food = {
     desc:
       "With egg yolk and guanciale",
     price: 1724,
-    ingredients: ['ingredient1','ingredient2','ingredient3'],
+    ingredients: ['egg','spaghetti','pancetta'],
     status: "available"
   },
   item2: {
@@ -12,7 +12,7 @@ const food = {
     desc:
       "Cheese and pepper",
     price: 1224,
-    ingredients: ['ingredient1','ingredient2','ingredient5','ingredient8'],
+    ingredients: ['spaghetti','parmesan','pepper'],
     status: "available"
   },
   item3: {
@@ -20,7 +20,7 @@ const food = {
     desc:
       "A stew with beef and ale",
     price: 1924,
-    ingredients: ['ingredient3','ingredient4','ingredient5','ingredient6'],
+    ingredients: ['beef'],
     status: "available"
   },
   item4: {
@@ -28,7 +28,7 @@ const food = {
     desc:
       "Beef mince with tomatoes, onions and kidney beans",
     price: 1700,
-    ingredients: ['ingredient1','ingredient2','ingredient4','ingredient7'],
+    ingredients: ['beef'],
     status: "available"
   },
   item5: {
@@ -36,7 +36,7 @@ const food = {
     desc:
       "Filled pasta with spinach and riocotta",
     price: 1724,
-    ingredients: ['ingredient2','ingredient5','ingredient6','ingredient8'],
+    ingredients: ['riocotta'],
     status: "available"
   },
 }

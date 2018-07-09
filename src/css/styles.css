@@ -1,3 +1,17 @@
 body {
   background: #ffc0cb;
 }
+body .wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+body .wrap .pages {
+  background-color: rgba(255,255,255,0.2);
+}
+body .wrap .pages .page {
+  float: left;
+  width: 31.33%;
+  background-color: rgba(255,255,255,0.2);
+  padding: 20px;
+  margin: 1%;
+}
