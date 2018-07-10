@@ -3,18 +3,18 @@ import MenuItem from './restaurant/MenuItem';
 import IngredientBtn from './restaurant/IngredientBtn';
 import NewIngredient from './restaurant/NewIngredient';
 import DeleteIngredient from './restaurant/DeleteIngredient';
-import food from '../sampleMenu';
+import menu from '../sampleMenu';
 import ingredients from '../ingredients';
 
 class Restaurant extends Component {
   state = {
-    menu: food,
+    menu: menu,
     ingredients: ingredients
   }
   loadSampleMenu = () => {
     // console.log(this.state.ingredients);
     this.setState({
-      menu: food
+      menu: menu
     });
     // console.log(food);
     // console.log('loadsample menu');
@@ -117,8 +117,8 @@ class Restaurant extends Component {
     const delivery = this.state.ingredients;
 
     Object.keys(this.state.menu).map(key => {
-      console.log(food[key].ingredients);
-      console.log(delivery);
+      //console.log(food[key].ingredients);
+      //console.log(delivery);
       // if (arr2.every(function (val) {
       //   return arr1.indexOf(val) >= 0;
       // })) {
@@ -126,12 +126,59 @@ class Restaurant extends Component {
       // }
       // const value = 'eggs';
       // console.log(this.state.ingredients['egg'].status);
-      // if (food[key].ingredients.some(val => this.state.ingredients[val].status === 'available')  ){
+      // if (food[key].ingredients.some(val => this.state.ingredients[val].status == true)  ){
       //     return <MenuItem key={key} data={food[key]} />
       //   }
 
 
+      // OLD array code
+
+      // <ul>
+      //   {
+      //     this.state.ingredients.map(name =>
+      //         <li key={name}>{name}
+      //           <DeleteIngredient name={name} deleteIngredient={this.deleteIngredient} />
+      //         </li>
+      //       )
+      //   }
+      // </ul>
+
+      // {
+      //   Object.keys(this.state.menu).map(key => {
+      //     if (food[key].ingredients.every(val => delivery.indexOf(val) >= 0 )) {
+      //       return <MenuItem key={key} data={food[key]} />
+      //     }
+      //     return null;
+      //   })
+      // }
+
+      // OLD array code
+
     })
+
+    // {
+    // Object.keys(this.state.menu).map(key => {
+    //   if (arr2.every(function (val) {
+    //     return arr1.indexOf(val) >= 0;
+    //   })) {
+    //     console.log('its there')
+    //   }
+    //   const value = 'eggs';
+    //   console.log(this.state.ingredients['egg'].status);
+      // if (food[key].ingredients.some(val => this.state.ingredients[val].status == true)  ){
+      //     return <MenuItem key={key} data={food[key]} />
+      //   }
+    //   }
+    // }
+
+    // {
+    //   this.state.ingredients.map(name =>
+    //     <IngredientBtn
+    //       key={name}
+    //       ingredients={this.state.ingredients}
+    //       addIngredient={this.addIngredient} deleteIngredient={this.deleteIngredient}
+    //       name={name}/>)
+    // }
 
 
 
@@ -141,41 +188,35 @@ class Restaurant extends Component {
         <div className="pages">
           <div className="menu page">
             <h2>Menu</h2>
-            {
-              Object.keys(this.state.menu).map(key => {
-                if (food[key].ingredients.every(val => delivery.indexOf(val) >= 0 )) {
-                  return <MenuItem key={key} data={food[key]} />
-                }
-                return null;
-              })
-            }
+              {
+                Object.keys(this.state.menu).map(key => {
+                  //console.log(menu[key].ingredients);
+                  // console.log(menu[key].ingredients);
+                  // console.log(ingre);
+                  console.log(this.state.ingredients['egg'].status);
+                  console.log(menu[key].ingredients)
+                  if (menu[key].ingredients
+                    .some(val => {
+                      this.state.ingredients[val] ?
+                        return this.state.ingredients[val].status === true :
+                      return false
+                    ){
+                      return <MenuItem key={key} data={menu[key]} />
+                  }
+                })
+              }
             <button onClick={this.loadSampleMenu}>Load menu</button>
           </div>
           <div className="aval-ingredients page">
             <h2>Availiable ingredients</h2>
-            <ul>
-              {
-                this.state.ingredients.map(name =>
-                    <li key={name}>{name}
-                      <DeleteIngredient name={name} deleteIngredient={this.deleteIngredient} />
-                    </li>
-                  )
-              }
-            </ul>
+
             <NewIngredient newIngredient={this.newIngredient} />
 
           </div>
           <div className="supplier page">
             <h2>Supplier</h2>
             <NewIngredient newIngredient={this.newIngredient} />
-              {
-                this.state.ingredients.map(name =>
-                  <IngredientBtn
-                    key={name}
-                    ingredients={this.state.ingredients}
-                    addIngredient={this.addIngredient} deleteIngredient={this.deleteIngredient}
-                    name={name}/>)
-              }
+
           </div>
           <div className="clearfix">
           </div>
