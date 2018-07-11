@@ -67,12 +67,15 @@ class Restaurant extends Component {
   }
   newIngredient = ingredient => {
     const ingredients = this.state.ingredients;
-    if(!ingredients.includes(ingredient)) {
-      ingredients.push(ingredient);
+    // if(!ingredients.includes(ingredient)) {
+      // ingredients.push(ingredient);
+      ingredients[ingredient] = {
+        status: true
+      }
       this.setState({
         ingredients: ingredients
       })
-    }
+    // }
   }
   render() {
     // const arr1 = ['ingredient1','ingredient2','boop','ingredient3','ingredient4'];
@@ -190,28 +193,21 @@ class Restaurant extends Component {
             <h2>Menu</h2>
               {
                 Object.keys(this.state.menu).map(key => {
-                  //console.log(menu[key].ingredients);
-                  // console.log(menu[key].ingredients);
-                  // console.log(ingre);
-                  console.log(this.state.ingredients['egg'].status);
-                  console.log(menu[key].ingredients)
-                  if (menu[key].ingredients
-                    .some(val => {
-                      this.state.ingredients[val] ?
-                        return this.state.ingredients[val].status === true :
-                      return false
-                    ){
+                  // console.log(this.state.ingredients['egg'].status);
+                  // console.log(menu[key].ingredients)
+                  if (menu[key].ingredients.every(val => {
+                   return this.state.ingredients[val] ?
+                      this.state.ingredients[val].status === true :
+                      false;
+                    })){
                       return <MenuItem key={key} data={menu[key]} />
-                  }
+                    }
                 })
               }
             <button onClick={this.loadSampleMenu}>Load menu</button>
           </div>
           <div className="aval-ingredients page">
             <h2>Availiable ingredients</h2>
-
-            <NewIngredient newIngredient={this.newIngredient} />
-
           </div>
           <div className="supplier page">
             <h2>Supplier</h2>

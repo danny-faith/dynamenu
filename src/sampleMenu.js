@@ -4,7 +4,7 @@ const food = {
     desc:
       "With egg yolk and guanciale",
     price: 1724,
-    ingredients: ['egg','spaghetti','pancetta'],
+    ingredients: ['spaghetti','egg','pancetta'],
     status: "available"
   },
   item2: {
@@ -20,7 +20,7 @@ const food = {
     desc:
       "A stew with beef and ale",
     price: 1924,
-    ingredients: ['beef'],
+    ingredients: ['beef','ale'],
     status: "available"
   },
   item4: {

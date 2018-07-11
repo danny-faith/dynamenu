@@ -1,11 +1,11 @@
 //const ingredients = ['egg','spaghetti','pancetta','beef','ingredient5','ingredient6','ingredient7','ingredient8','ingredient9'];
 
 const ingredients = {
-  egg: {
+  'egg': {
     status: true
   },
-  beef: {
-    status: false
+  'beef': {
+    status: true
   }
 }
 
